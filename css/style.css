@@ -128,6 +128,36 @@ th {
     background-color: #e7fbe4;
 }
 
+.back-to-events {
+    display: inline-block;
+    margin: 20px 0 10px 40px;
+    padding: 12px 20px;
+    background-color: #228B22;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+.back-to-events:hover {
+    background-color: #176517;
+    color: white;
+    text-decoration: none;
+    transform: scale(1.05);
+}
+
+.back-to-events:active {
+    transform: scale(0.98);
+}
+
+.back-to-events:focus {
+    outline: 3px solid #124b1f;
+    outline-offset: 3px;
+}
+
 
 /* tips page */
 
