@@ -27,17 +27,17 @@
 
                 <label for="speed">Throw Speed (m/s): </label>
                 <div class="input-group">
-                    <input type="number" id="speed">
+                    <input type="number" id="speed" min="0" step="0.1">
                 </div>
 
-                <label for="angle"> Throw Angle (degrees): </label>
+                <label for="angle"> Throw Angle (degrees from the ground): </label>
                 <div class="input-group">
-                    <input type="number" id="angle">
+                    <input type="number" min="0" max="90" step="0.1" id="angle">
                 </div>
 
-                <label for="height">Throw Height (meters):</label>
+                <label for="height">Release Height (meters from the ground):</label>
                 <div class="input-group">
-                    <input type="number" id="height">
+                    <input type="number" id="height" min="0" step="0.1">
                 </div>
 
                 <button type="button" id="calculate">Calculate</button>

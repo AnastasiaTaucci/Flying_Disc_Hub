@@ -1,30 +1,46 @@
-🌀 The Flying Disc Hub
-A dynamic website dedicated to disc golf enthusiasts!
+# The Flying Disc Hub
 
-📖 Project Overview
-The Flying Disc Hub is an interactive, multi-page website designed for disc golf players of all skill levels. The site provides essential information on local courses, upcoming events, disc golf tips, and web security. Additionally, it includes interactive forms that allow users to calculate throw distances, register for events, and provide feedback on their interests.
+The Flying Disc Hub is an interactive multi-page website for disc golf players and beginners. It was built with HTML, CSS, and JavaScript as a course project for CIS 242 Web II: JavaScript / jQuery.
 
-This project was developed as part of my CIS242 - Web II JavaScript jQuery class.
+The goal of the project was to practice core front-end development skills, including DOM manipulation, form validation, working with browser APIs, using external data, handling user input, and deploying a static website with GitHub Pages.
 
-🛠 Features
-✅ Home Page
+## Live Demo
 
-Welcomes users to the site with an introduction to disc golf.
-✅ Local Courses Page
+https://anastasiataucci.github.io/Flying_Disc_Hub/
 
-Lists popular disc golf courses with relevant details.
-✅ Events Page
+## Features
 
-Displays upcoming disc golf events in a table format.
-Event Registration Form with validation:
-Allows users to sign up for events.
-Uses custom email validation while keeping HTML validation for other fields.
-Lets users select multiple interests, which update dynamically.
-✅ Tips Page
+- Built a multi-page website with shared navigation, structured content, and page-specific JavaScript functionality.
+- Used an external API to display disc golf course information, focusing on countries with meaningful available data.
+- Created an event registration form with required fields, custom email validation, dynamic interest selection, and session storage for saving form progress.
+- Used URL parameters to display submitted registration details on a confirmation page.
+- Built a throw distance calculator with user input, validation, and calculated feedback.
+- Displayed browser/device information using JavaScript browser APIs.
+- Used the browser Geolocation API with Leaflet and OpenStreetMap to show the user’s location on an interactive map after permission is granted.
+- Published the project using GitHub Pages.
 
-Provides useful insights on improving disc golf skills.
-Includes a Throw Distance Calculator, allowing users to input speed, angle, and height for calculations.
-✅ Web Security Page
+## Tech Stack
 
-Educates users on safe browsing practices and how websites collect device data.
-Displays live device information to demonstrate what websites can access.
+- HTML
+- CSS
+- JavaScript
+- DOM Manipulation
+- Form Validation
+- Session Storage
+- URLSearchParams
+- Browser Geolocation API
+- Leaflet
+- OpenStreetMap
+- External API
+- GitHub Pages
+
+## Potential Improvements
+
+- Add search and filtering for course locations.
+- Expand course data to include more countries as more reliable information becomes available.
+- Connect live event updates instead of using static event data.
+- Send email confirmations after users register for an event.
+- Add more disc golf tips, such as how to choose discs for different skill levels.
+- Improve the throw distance calculator to show a visual trajectory.
+- Add responsive breakpoints to improve the layout across more screen sizes.
+
