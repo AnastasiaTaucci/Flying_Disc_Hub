@@ -29,6 +29,9 @@ function DeviceInfo() {
 
 // map section
 
+let map;
+let userMarker;
+
 //get user location
 document.getElementById("get-location").addEventListener("click", function() {
     navigator.geolocation.getCurrentPosition(locationSuccess, locationFail);
@@ -39,12 +42,13 @@ document.getElementById("get-location").addEventListener("click", function() {
         let alt = position.coords.altitude;
         let myPosition = {lat: lat, lng: lon};
 
-        let mapOpt = {
-            zoom: 11,
-            center: myPosition
+        map.setView(myPosition, 13);
+
+        if (userMarker) {
+          userMarker.setLatLng(myPosition);
+        } else {
+          userMarker = L.marker(myPosition).addTo(map);
         }
-        
-        myMap(mapOpt, myPosition);
 
         let locationInfoText = "<strong>Location: </strong> You’re at Latitude  " + lat + ", Longitude " + lon;
         if(alt) {
@@ -63,15 +67,10 @@ document.getElementById("get-location").addEventListener("click", function() {
 
 //create map
 function initMap() {
-    new google.maps.Map(mapDisplay, {zoom: 10, center: {lat: 47.6062, lng: -122.3321}});
-}
+    map = L.map(mapDisplay).setView([47.6062, -122.3321], 10);
 
-// creating personalized map based on location
-function myMap(mapOpt, myPoistion) {
-    let myMap = new google.maps.Map(mapDisplay, mapOpt);
-    new google.maps.Marker({
-        position: myPoistion,
-        map: myMap,
-        title: "Your Location"
-    })
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 19,
+      attribution: "&copy; OpenStreetMap contributors",
+    }).addTo(map);
 }

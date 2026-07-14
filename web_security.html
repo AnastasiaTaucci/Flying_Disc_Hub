@@ -1,93 +1,158 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Flying Disc Hub</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlJRiFB4ZUyKfUgxuGBxaoZoa6e5kte4g&callback=initMap"></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
     <script src="js/web_security.js" defer></script>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <h1>The Flying Disc Hub</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="courses.html">Courses</a>
-            <a href="events.html">Events</a>
-            <a href="tips.html">Tips</a>
-            <a href="web_security.html" id="currentpage">Web Security</a>
-        </nav>
+      <h1>The Flying Disc Hub</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="courses.html">Courses</a>
+        <a href="events.html">Events</a>
+        <a href="tips.html">Tips</a>
+        <a href="web_security.html" id="currentpage">Web Security</a>
+      </nav>
     </header>
-    
-    <main>
-        <section>
-            <h2>Keeping Your Digital World Secure</h2>
-            <p>Just like in disc golf, where understanding the wind and terrain helps 
-                you throw your best shot, staying informed about online security helps 
-                you navigate the internet safely. The internet is an essential part of 
-                our lives, but it’s important to be aware of potential security risks. 
-                Websites can access various details about your device and browser, which 
-                can be used for personalization or, unfortunately, for malicious purposes. 
-                This page aims to raise awareness about web security and provide tips for 
-                staying safe online—so you can keep your focus on the game, whether it’s on 
-                the course or the web!</p>
-        </section>
 
-        <section>
-            <h2>What We Know About Your Device</h2>
-            <p>Let’s see what your device has to say — here are just a few examples:</p>
-            <ul class="device-info"></ul>
-        </section>
-        <section>
-            <h2>Your Location</h2>
-            <p id="location-intro">
-                Ever wondered where you are right now? 🗺️ Click the button below, and we’ll pinpoint your location on the map!  
-                Don’t worry, we’re not tracking you — just helping you find your way, just like a well-thrown disc in a game of disc golf! 🥏
-            </p>
-            <div id="location-button">
-                <button id="get-location">Show My Location</button> 
-                <p id="location-info">Click the button to see your location.</p>
+    <main>
+      <section>
+        <h2>Keeping Your Digital World Secure</h2>
+        <p>
+          Just like in disc golf, where understanding the wind and terrain helps
+          you throw your best shot, staying informed about online security helps
+          you navigate the internet safely. The internet is an essential part of
+          our lives, but it’s important to be aware of potential security risks.
+          Websites can access various details about your device and browser,
+          which can be used for personalization or, unfortunately, for malicious
+          purposes. This page aims to raise awareness about web security and
+          provide tips for staying safe online—so you can keep your focus on the
+          game, whether it’s on the course or the web!
+        </p>
+      </section>
+
+      <section>
+        <h2>What We Know About Your Device</h2>
+        <p>
+          Let’s see what your device has to say — here are just a few examples:
+        </p>
+        <ul class="device-info"></ul>
+      </section>
+      <section>
+        <h2>Your Location</h2>
+        <p id="location-intro">
+          Ever wondered where you are right now? 🗺️ Click the button below, and
+          we’ll pinpoint your location on the map! Don’t worry, we’re not
+          tracking you — just helping you find your way, just like a well-thrown
+          disc in a game of disc golf! 🥏
+        </p>
+        <div id="location-button">
+          <button id="get-location">Show My Location</button>
+          <p id="location-info">Click the button to see your location.</p>
+        </div>
+        <div id="map"></div>
+      </section>
+      <section>
+        <h2>Tips for Staying Safe Online</h2>
+        <ul class="tips">
+          <li>
+            <a
+              href="https://www.fcc.gov/consumers/guides/secure-web-navigation-and-transactions"
+              class="links"
+              target="_blank"
+              >Federal Communications Commission</a
+            >
+            <div class="container">
+              <a
+                href="https://www.fcc.gov/consumers/guides/secure-web-navigation-and-transactions"
+                target="_blank"
+              >
+                <img
+                  src="images/web-security_page/fcc.png"
+                  alt="Federal Communications Commision Logo"
+                />
+              </a>
+              <p>
+                This guide from the FCC offers easy and practical tips for
+                secure web navigation, emphasizing the importance of updating
+                security software, using strong passwords, and securing wireless
+                connections to guard against malware, spyware, and hacking
+                attempts.
+              </p>
             </div>
-            <div id="map"></div>
-        </section>
-        <section>
-            <h2>Tips for Staying Safe Online</h2>
-            <ul class="tips">
-                <li>
-                    <a href="https://www.fcc.gov/consumers/guides/secure-web-navigation-and-transactions" class="links" target="_blank" >Federal Communications Commision</a>
-                    <div class="container">
-                        <a href="https://www.fcc.gov/consumers/guides/secure-web-navigation-and-transactions" target="_blank">
-                            <img src="images/web-security_page/fcc.png" alt="Federal Communications Commision Logo">
-                        </a>
-                        <p>This guide from the FCC offers easy and practical tips for secure web navigation, emphasizing the importance of updating security software, using strong passwords, and securing wireless connections to guard against malware, spyware, and hacking attempts.</p>
-                    </div>
-                </li>
-                <li>
-                    <a href="https://www.cisa.gov/secure-our-world/secure-yourself-your-family" class="links" target="_blank">Cybersecurity & Infrastructure Security Agency</a>
-                    <div class="container">
-                        <a href="https://www.cisa.gov/secure-our-world/secure-yourself-your-family" target="_blank">
-                            <img src="images/web-security_page/cisa.png" alt="Cybersecurity & Infrastructure Security Agency Logo">
-                        </a>
-                        <p>This simple and colorful site from America's Cyber Defense Agency (CISA) teaches how to recognize phishing, the importance of strong passwords and multifactor authentication, and offers easy, practical tips through short videos and in-depth articles.</p>
-                    </div>
-                </li>
-                <li>
-                    <a href="https://safety.google/security/security-tips/" class="links" target="_blank">Google Tools and Tips</a>
-                    <div class="container">
-                        <a href="https://safety.google/security/security-tips/" target="_blank">
-                            <img src="images/web-security_page/google.jpg" alt="Google Security Logo">
-                        </a>
-                        <p>This page from one of the most widely used tech companies, Google, provides simple guidance on using its features to protect yourself online, including strengthening your account, safeguarding your information on devices, recognizing scams, and understanding apps on their platforms.</p>
-                    </div>
-                </li>
-            </ul>
-        </section>
+          </li>
+          <li>
+            <a
+              href="https://www.cisa.gov/secure-our-world/secure-yourself-your-family"
+              class="links"
+              target="_blank"
+              >Cybersecurity & Infrastructure Security Agency</a
+            >
+            <div class="container">
+              <a
+                href="https://www.cisa.gov/secure-our-world/secure-yourself-your-family"
+                target="_blank"
+              >
+                <img
+                  src="images/web-security_page/cisa.png"
+                  alt="Cybersecurity & Infrastructure Security Agency Logo"
+                />
+              </a>
+              <p>
+                This simple and colorful site from America's Cyber Defense
+                Agency (CISA) teaches how to recognize phishing, the importance
+                of strong passwords and multifactor authentication, and offers
+                easy, practical tips through short videos and in-depth articles.
+              </p>
+            </div>
+          </li>
+          <li>
+            <a
+              href="https://safety.google/security/security-tips/"
+              class="links"
+              target="_blank"
+              >Google Tools and Tips</a
+            >
+            <div class="container">
+              <a
+                href="https://safety.google/security/security-tips/"
+                target="_blank"
+              >
+                <img
+                  src="images/web-security_page/google.jpg"
+                  alt="Google Security Logo"
+                />
+              </a>
+              <p>
+                This page from one of the most widely used tech companies,
+                Google, provides simple guidance on using its features to
+                protect yourself online, including strengthening your account,
+                safeguarding your information on devices, recognizing scams, and
+                understanding apps on their platforms.
+              </p>
+            </div>
+          </li>
+        </ul>
+      </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 The Flying Disc Hub</p>
+      <p>&copy; 2025 The Flying Disc Hub</p>
     </footer>
-
-</body>
+  </body>
 </html>
