@@ -46,9 +46,9 @@ document.getElementById("get-location").addEventListener("click", function() {
         
         myMap(mapOpt, myPosition);
 
-        let locationInfoText = "<strong>Location: </strong> You’re at Latitude  " + lat + ", Longtitude " + lon;
+        let locationInfoText = "<strong>Location: </strong> You’re at Latitude  " + lat + ", Longitude " + lon;
         if(alt) {
-            locationInfo += ", Altitude " + alt;
+            locationInfoText += ", Altitude " + alt;
         }
         locationInfoText += ". Pretty cool, huh?"
         locationInfo.innerHTML = locationInfoText;        
